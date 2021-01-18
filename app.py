@@ -8,3 +8,9 @@ myList.insert(15)
 myList.insert(20)
 
 myList.display()
+
+myList.delete(20)
+
+myList.display()
+
+# print(myList.length())

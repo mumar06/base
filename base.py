@@ -1,3 +1,5 @@
+from multipledispatch import dispatch
+
 class Node:
     def __init__(self,value = None):
         self.value = value
@@ -18,6 +20,16 @@ class Linkedlist:
             new_node = Node(value)
             self.tail.next = new_node
             self.tail = new_node
+#   O(1)
+    def push(self, value):
+        if self.head == None:
+            new_node = Node(value)
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node = Node(value)
+            new_node.next = self.head
+            self.head = new_node
 #   O(n)
     def update(self, old_value, new_value):
         if self.head.value == old_value:
@@ -61,20 +73,64 @@ class Linkedlist:
     def length(self):
         temp_node = self.head
         count = 0
-        while temp_node.next != None:
+        while temp_node != None:
             count += 1
             temp_node = temp_node.next
-        count += 1
         return count
+#   O(n)
+    @dispatch()
+    def getElements(self):
+        temp_node = self.head
+        data_list = []
+        while temp_node != None:
+            data_list.append(temp_node.value)
+            temp_node = temp_node.next
+        return data_list
+#   O(n)
+    @dispatch(int)
+    def getElements(self,n):
+        if(n > self.length()):
+            return False
+        temp_node = self.head
+        data_list = [0] * n
+        for i in range(0,n):
+            data_list[i] = temp_node.value
+            temp_node = temp_node.next
+        return data_list
+#   O(n)
+    @dispatch(int,int)
+    def getElements(self,start,end):
+        if(end >= self.length() or start > end):
+            return False
+        temp_node = self.head
+        getSize = (end - start) + 1
+        data_list = [0] * getSize
+        for i in range(0,start):
+            temp_node = temp_node.next
+        for i in range(0,getSize):
+            data_list[i] = temp_node.value
+            temp_node = temp_node.next
+        return data_list
+#   O(n)
+    def getLastElements(self,n):
+        size = self.length()
+        if(n > size):
+            return False
+        temp_node = self.head
+        data_list = [0] * n
+        for i in range(0,size-n):
+            temp_node = temp_node.next
+        for i in range(0,n):
+            data_list[i] = temp_node.value
+            temp_node = temp_node.next
+        return data_list
 #   O(n)
     def display(self):
         temp_node = self.head
-        data_list = []
-        while temp_node.next != None:
-            data_list.append(temp_node.value)
+        end = ' '
+        while temp_node != None:
+            print(temp_node.value, end=end)
             temp_node = temp_node.next
-        data_list.append(temp_node.value)
-        print(data_list)
 
 
 class DoublyLinkedlist:

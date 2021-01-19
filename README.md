@@ -7,5 +7,6 @@ Following data structures were implemented:
 3, Circular Linked List
 4, Stack
 5, Queue
-6, Graph
-7, Tree
+6, Hash
+7, Graph
+8, Tree

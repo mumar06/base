@@ -1,3 +1,3 @@
-from base import Stack
+from base import Queue
 
-mystack = Stack()
+myqueue = Queue()

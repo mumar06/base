@@ -117,7 +117,58 @@ Following data structures were implemented: <br>
 - Takes one argument, which is number of Nodes needed. <br>
 - For getting last n Nodes' value, it will return an array. <br>
 
-### 3, Queue <br>
+### 3, Queue
+
+####    Initialization:
+        from base import Queue
+        myqueue = Queue()
+
+####    Functions/Methods Description:
+**a, enqueue(para_one):** <br>
+- Takes one argument, which is a Node value. <br>
+- Insert at the end of Stack. <br>
+
+**b, dequeue():** <br>
+- Takes no argument. <br>
+- For deleting a Node present at the end of the Stack. <br>
+
+**c, delete(para_one):** <br>
+- Takes one argument, a Node value which has to be deleted. <br>
+- For deleting a Node, based on value, in the Stack. Return True if value is deleted or False if value not found. <br>
+
+**d, update(para_one,para_two):** <br>
+- Takes two arguments, Node's old value and new value. <br>
+- For Updating a Node in the Stack. Return True if value is updated or False if value not found. <br>
+
+**e, search(para_one):** <br>
+- Takes one argument, a Node's value which needs to be found. <br>
+- For searching a Node, based on value, in the Stack. Return True if Node is found or False if not found. <br>
+
+**f, length():** <br>
+- Takes no argument. <br>
+- For calculating the lenght of the Stack. <br>
+
+**g, display():** <br>
+- Takes no argument. <br>
+- For displaying whole Stack. <br>
+
+**h, getElements():**<br>
+- Takes no arguments. <br>
+- For getting all the nodes' value, it will return an array. <br>
+
+**i, getElements(para_one):** <br>
+- Takes one argument, which is number of Nodes needed. <br>
+- For getting first n nodes's value, it will return an array. <br>
+
+**j, getElements(para_one, para_two):** <br>
+- Takes two arguments, starting point and ending point. <br>
+- To get elements which are between Head Node and Tail Node. <br> 
+- For getting Node's value between start index till end index, start and end point will also be included. It will return an array. <br>
+
+**k, getLastElements(para_one):** <br>
+- Takes one argument, which is number of Nodes needed. <br>
+- For getting last n Nodes' value, it will return an array. <br>
+
 ### 4, Priority Queue <br>
 ### 5, Hash <br>
 ### 6, Graph <br>

@@ -1,3 +1,3 @@
-from base import Linkedlist
+from base import Stack
 
-myList = Linkedlist()
+mystack = Stack()

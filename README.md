@@ -1,5 +1,5 @@
 # base
-# Basic implementation of important data structures in python.
+## Basic implementation of important data structures in python.
 
 Following data structures were implemented: <br>
 ### 1, Linked List
@@ -19,7 +19,7 @@ Following data structures were implemented: <br>
 
 **c, delete(para_one):** <br>
 - Takes one argument, a Node value which has to be deleted. <br>
-- For deleting a Node, based on value, in the Linked List. return True if value is deletedor False if value not found. <br>
+- For deleting a Node, based on value, in the Linked List. Return True if value is deleted or False if value not found. <br>
 
 **d, pop():** <br>
 - Takes no argument. <br>
@@ -27,11 +27,11 @@ Following data structures were implemented: <br>
 
 **e, update(para_one,para_two):** <br>
 - Takes two arguments, Node's old value and new value. <br>
-- For Updating a Node in the Linked List, return True if value is updated or False if valuenot found. <br>
+- For Updating a Node in the Linked List. Return True if value is updated or False if value not found. <br>
 
 **f, search(para_one):** <br>
 - Takes one argument, a Node's value which needs to be found. <br>
-- For searching a Node, based on value, in the Linked List. Return True if Node is found and False if not found. <br>
+- For searching a Node, based on value, in the Linked List. Return True if Node is found or False if not found. <br>
 
 **g, sort():** <br>
 - Takes no argument. <br>
@@ -56,11 +56,11 @@ Following data structures were implemented: <br>
 **l, getElements(para_one, para_two):** <br>
 - Takes two arguments, starting point and ending point. <br>
 - To get elements which are between Head Node and Tail Node. <br> 
-- For getting Node's value between start index till end index, start and end point will alsobeincluded. It will return an array. <br>
+- For getting Node's value between start index till end index, start and end point will also be included. It will return an array. <br>
 
 **m, getLastElements(para_one):** <br>
 - Takes one argument, which is number of Nodes needed. <br>
-- For getting last n Node's value, it will return an array. <br>
+- For getting last n Nodes' value, it will return an array. <br>
 
 ### Doubly Linked List (On Hold) <br>
 ### Circular Linked List (On Hold) <br>

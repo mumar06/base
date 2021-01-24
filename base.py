@@ -11,7 +11,7 @@ class Linkedlist:
         self.head = None
         self.tail = None
 #   O(1)
-#   Insert into the end of Linked List
+#   Insert at the end of Linked List
     def insert(self, value):
         # If head is None means the Linked List is empty
         if self.head == None:
@@ -24,7 +24,7 @@ class Linkedlist:
             self.tail.next = new_node
             self.tail = new_node
 #   O(1)
-#   Insert into the beginning of Linked List
+#   Insert at the beginning of Linked List
     def push(self, value):
         # If head is None means the Linked List is empty
         if self.head == None:
@@ -114,7 +114,7 @@ class Linkedlist:
         if size < 2:
             return head
         mid = size // 2
-#       For Dividing Linked List which is on the left side
+        # For Dividing Linked List which is on the left side
         new_node = Node(head.value)
         head_left = new_node
         tail_left = new_node
@@ -124,7 +124,7 @@ class Linkedlist:
             tail_left.next = new_node
             tail_left = new_node
             temp_node = temp_node.next
-#       For Dividing Linked List which is on the right side
+        # For Dividing Linked List which is on the right side
         new_node = Node(temp_node.value)
         head_right = new_node
         tail_right = new_node
@@ -134,10 +134,10 @@ class Linkedlist:
             tail_right.next = new_node
             tail_right = new_node
             temp_node = temp_node.next
-#       Recursive calls for remaining node untill Linked List length comes to 1
+        # Recursive calls for remaining node untill Linked List length comes to 1
         head_left = self.mergesort(head_left)
         head_right = self.mergesort(head_right)
-#       For merging the Linked List in increasing order
+        # For merging the Linked List in increasing order
         return self.merge(head_left,head_right)
 
     def merge(self, left_temp, right_temp):
@@ -161,7 +161,7 @@ class Linkedlist:
         if right_temp != None:
             head.next = right_temp
             tail = right_temp
-#       Returning the Next node after head, as head is an empty Node
+        # Returning the Next node after head, as head is an empty Node
         return head.next
 
 #   O(n)

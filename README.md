@@ -5,7 +5,7 @@ Following data structures were implemented: <br>
 ### 1, Linked List
 
 ####    Initialization:
-from base import Linkedlist
+        from base import Linkedlist
         myList = Linkedlist()
 
 ####    Functions/Methods Description:

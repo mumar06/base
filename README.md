@@ -11,7 +11,8 @@ Following data structures were implemented: <br>
 ####    Functions/Methods Description:
 **a, insert():** <br>
 - Takes one argument, which is a Node value <br>
-- Insert at the end of Linked List. <br> <br>
+- Insert at the end of Linked List. <br>
+
 **b, push():** <br>
 - Takes one argument, which is a Node value. <br>
 - Insert at the beginning of Linked List. <br>

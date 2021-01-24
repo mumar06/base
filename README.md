@@ -9,15 +9,15 @@ Following data structures were implemented: <br>
         myList = Linkedlist()
 
 ####    Functions/Methods Description:
-**a, insert():** <br>
-- Takes one argument, which is a Node value <br>
+**a, insert(para_one):** <br>
+- Takes one argument, which is a Node value. <br>
 - Insert at the end of Linked List. <br>
 
-**b, push():** <br>
+**b, push(para_one):** <br>
 - Takes one argument, which is a Node value. <br>
 - Insert at the beginning of Linked List. <br>
 
-**c, delete():** <br>
+**c, delete(para_one):** <br>
 - Takes one argument, a Node value which has to be deleted. <br>
 - For deleting a Node, based on value, in the Linked List. return True if value is deletedor False if value not found. <br>
 
@@ -25,13 +25,13 @@ Following data structures were implemented: <br>
 - Takes no argument. <br>
 - For deleting a Node present at the end of the Linked List. <br>
 
-**e, update():** <br>
+**e, update(para_one,para_two):** <br>
 - Takes two arguments, Node's old value and new value. <br>
 - For Updating a Node in the Linked List, return True if value is updated or False if valuenot found. <br>
 
-**f, search():** <br>
+**f, search(para_one):** <br>
 - Takes one argument, a Node's value which needs to be found. <br>
-- For searching a Node, based on value, in the Linked List. Return True if Node is found andFalse if not found. <br>
+- For searching a Node, based on value, in the Linked List. Return True if Node is found and False if not found. <br>
 
 **g, sort():** <br>
 - Takes no argument. <br>

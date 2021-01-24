@@ -5,13 +5,13 @@ Following data structures were implemented: <br>
 ### 1, Linked List
 
 ####    Initialization:
-        from base import Linkedlist <br>
-        myList = Linkedlist() <br>
+        from base import Linkedlist
+        myList = Linkedlist()
 
 ####    Functions/Methods Description:
 **a, insert():** <br>
 - Takes one argument, which is a Node value <br>
-- Insert at the end of Linked List <br>
+- Insert at the end of Linked List.
 **b, push():** <br>
 - Takes one argument, which is a Node value. <br>
 - Insert at the beginning of Linked List. <br>

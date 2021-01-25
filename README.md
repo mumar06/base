@@ -169,7 +169,10 @@ Following data structures were implemented: <br>
 - Takes one argument, which is number of Nodes needed. <br>
 - For getting last n Nodes' value, it will return an array. <br>
 
-### 4, Priority Queue <br>
-### 5, Hash <br>
-### 6, Graph <br>
-### 7, Tree <br>
+### 4, Hash <br>
+### 5, Generic Tree <br>
+### 6, Binary Tree <br>
+### 6, Binary Search Tree <br>
+### 6, Min Heap <br>
+### 6, Max Heap <br>
+### 7, Graph <br>

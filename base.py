@@ -1,9 +1,15 @@
+# below model is used for function overriding
 from multipledispatch import dispatch
-
+###############################################################################################################################
+#
+#                                                       NODE
+#
+###############################################################################################################################
 class Node:
     def __init__(self,value = None):
         self.value = value
         self.next = None
+
 ###############################################################################################################################
 #
 #                                               LINKED LIST DATA STRUCTURE
@@ -292,9 +298,9 @@ class Stack:
         # If head is not None means the Stack is not empty, hence inserting at the tail
         else:
             new_node = Node(value)
-            self.tail.next = new_node
-            self.tail = new_node
-#   O(n)
+            new_node.next = self.head
+            self.head = new_node
+#   O(1)
 #   For deleting a Node present at the end of the Stack
     def pop(self):
         # When Queue is empty
@@ -306,13 +312,7 @@ class Stack:
             self.tail = None
             return True
         else:
-            current_node = self.head
-            previous_node = self.head
-            while current_node != self.tail:
-                previous_node = current_node
-                current_node = current_node.next
-            previous_node.next = None
-            previous_node = self.tail
+            self.head = self.head.next
             return True
 #   O(n)
 #   For Updating a Node in the Stack, return True if value is updated or False if value not found
@@ -472,9 +472,9 @@ class Queue:
         # If head is not None means the Queue is not empty, hence inserting at the Head
         else:
             new_node = Node(value)
-            new_node.next = self.head
-            self.head = new_node
-#   O(n)
+            self.tail.next = new_node
+            self.tail = new_node
+#   O(1)
 #   For deleting a Node present at the end of the Queue
     def dequeue(self):
         # When Queue is empty
@@ -486,13 +486,7 @@ class Queue:
             self.tail = None
             return True
         else:
-            current_node = self.head
-            previous_node = self.head
-            while current_node != self.tail:
-                previous_node = current_node
-                current_node = current_node.next
-            previous_node.next = None
-            previous_node = self.tail
+            self.head = self.head.next
             return True
 #   O(n)
 #   For Updating a Node in the Queue, return True if value is updated or False if value not found
@@ -634,15 +628,6 @@ class Queue:
 
 ###############################################################################################################################
 #
-#                                               PRIORITY QUEUE DATA STRUCTURE
-#
-###############################################################################################################################
-class PriorityQueue:
-    def __init__(self,a,b):
-        pass
-
-###############################################################################################################################
-#
 #                                               HASH DATA STRUCTURE
 #
 ###############################################################################################################################
@@ -652,10 +637,46 @@ class Hash:
 
 ###############################################################################################################################
 #
-#                                               TREE DATA STRUCTURE
+#                                           Generic TREE DATA STRUCTURE
 #
 ###############################################################################################################################
 class Tree:
+    def __init__(self,a,b):
+        pass
+
+###############################################################################################################################
+#
+#                                             BINARY TREE DATA STRUCTURE
+#
+###############################################################################################################################
+class BinaryTree:
+    def __init__(self,a,b):
+        pass
+
+###############################################################################################################################
+#
+#                                         BINARY SEARCH TREE DATA STRUCTURE
+#
+###############################################################################################################################
+class BinarySearchTree:
+    def __init__(self,a,b):
+        pass
+
+###############################################################################################################################
+#
+#                                              MIN HEAP DATA STRUCTURE
+#
+###############################################################################################################################
+class MinHeap:
+    def __init__(self,a,b):
+        pass
+
+###############################################################################################################################
+#
+#                                              MAX HEAP DATA STRUCTURE
+#
+###############################################################################################################################
+class MaxHeap:
     def __init__(self,a,b):
         pass
 

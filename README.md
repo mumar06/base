@@ -172,7 +172,7 @@ Following data structures were implemented: <br>
 ### 4, Hash <br>
 ### 5, Generic Tree <br>
 ### 6, Binary Tree <br>
-### 6, Binary Search Tree <br>
-### 6, Min Heap <br>
-### 6, Max Heap <br>
-### 7, Graph <br>
+### 7, Binary Search Tree <br>
+### 8, Min Heap <br>
+### 9, Max Heap <br>
+### 10, Graph <br>

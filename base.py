@@ -308,12 +308,14 @@ class Stack:
             return False
         # When Stack has only one Node
         elif self.head == self.tail:
+            temp_node = self.head 
             self.head = None
             self.tail = None
-            return True
+            return temp_node
         else:
+            temp_node = self.head
             self.head = self.head.next
-            return True
+            return temp_node
 #   O(n)
 #   For Updating a Node in the Stack, return True if value is updated or False if value not found
     def update(self, old_value, new_value):
@@ -482,12 +484,14 @@ class Queue:
             return False
         # When Queue has only one Node
         elif self.head == self.tail:
+            temp_node = self.head
             self.head = None
             self.tail = None
-            return True
+            return temp_node
         else:
+            temp_node = self.head
             self.head = self.head.next
-            return True
+            return temp_node
 #   O(n)
 #   For Updating a Node in the Queue, return True if value is updated or False if value not found
     def update(self, old_value, new_value):
@@ -637,12 +641,79 @@ class Hash:
 
 ###############################################################################################################################
 #
+#                                               Generic TREE NODE
+#
+###############################################################################################################################
+class GenericTreeNode:
+    def __init__(self,value = None):
+        self.value = value
+        self.children = []
+        self.parent = None
+    
+    def add_child(self,child):
+        child.parent = self
+        # self.children.append(child)
+        self.children.insert(len(self.children),child)
+
+###############################################################################################################################
+#
 #                                           Generic TREE DATA STRUCTURE
 #
 ###############################################################################################################################
-class Tree:
-    def __init__(self,a,b):
-        pass
+class GenericTree:
+    def __init__(self):
+        self.root = None
+
+#   O(V + E)
+    def insert(self,value,parent = None):
+        if parent == None:
+            new_node = GenericTreeNode(value)
+            self.root = new_node
+        else:
+            parent = self.search_parent(parent)
+            if parent == False:
+                return False
+            else:
+                parent.add_child(GenericTreeNode(value))
+
+#   O(V + E)
+    def search_parent(self,parent):
+        temp_node = self.root
+        queue = []
+        queue.append(temp_node)
+        if temp_node.value == parent:
+            return temp_node
+        while queue:
+            temp_node = queue.pop()
+            for child in temp_node.children:
+                if child.value == parent:
+                    return child
+                else:
+                    temp_node = child
+                    queue.append(child)
+        return False
+
+#   O(V + E)
+    def display(self):
+        if self.root == None:
+            print(False)
+        else:
+            temp_node = self.root
+            end = ' '
+            queue = []
+            queue.append(temp_node)
+            print(f"Root -> {temp_node.value}")
+            while queue:
+                temp_node = queue.pop()
+                if temp_node.children != []:
+                    print(f"Parent -> {temp_node.value}\t Children -> ",end=end)
+                for child in temp_node.children:
+                    print(f"{child.value}\t",end=end)
+                    queue.append(child)
+                if temp_node.children != []:
+                    print()
+
+
 
 ###############################################################################################################################
 #

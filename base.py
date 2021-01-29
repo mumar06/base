@@ -683,8 +683,10 @@ class GenericTree:
         queue.enqueue(temp_node)
         if temp_node.value == parent:
             return temp_node
-        while queue:
+        while True:
             temp_node = queue.dequeue()
+            if temp_node == False:
+                break
             for child in temp_node.children:
                 if child.value == parent:
                     return child
@@ -692,6 +694,42 @@ class GenericTree:
                     temp_node = child
                     queue.enqueue(child)
         return False
+
+#   O(V + E)
+    def bfs(self,value):
+        temp_node = self.root
+        queue = Queue()
+        queue.enqueue(temp_node)
+        if temp_node.value == value:
+            details = [0] * 3
+            details[2] = [0] * len(temp_node.children)
+            for child in range(len(temp_node.children)):
+                details[2][child] = temp_node.children[child].value
+            return details
+        while True:
+            temp_node = queue.dequeue()
+            if temp_node == False:
+                break
+            for child in temp_node.children:
+                if child.value == value:
+                    temp_node = child
+                    details = [0] * 3
+                    details[0] = temp_node.parent.value
+                    details[1] = [0] * len(temp_node.parent.children)
+                    for child in range(len(temp_node.parent.children)):
+                        details[1][child] = temp_node.parent.children[child].value
+                    details[2] = [0] * len(temp_node.children)
+                    for child in range(len(temp_node.children)):
+                        details[2][child] = temp_node.children[child].value
+                    return details
+                else:
+                    temp_node = child
+                    queue.enqueue(child)
+        return False
+
+#   O(V + E)
+    def dfs(self,value):
+        pass
 
 #   O(V + E)
     def display(self):

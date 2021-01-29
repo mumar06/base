@@ -696,15 +696,75 @@ class GenericTree:
         return False
 
 #   O(V + E)
+    def update(self,old_value,new_value):
+        temp_node = self.root
+        queue = Queue()
+        queue.enqueue(temp_node)
+        if temp_node.value == old_value:
+            temp_node.value = new_value
+            return True
+        while True:
+            temp_node = queue.dequeue()
+            if temp_node == False:
+                break
+            for child in temp_node.children:
+                if child.value == old_value:
+                    child.value = new_value
+                    return True
+                else:
+                    temp_node = child
+                    queue.enqueue(child)
+        return False
+
+#   O(V + E)
     def bfs(self,value):
         temp_node = self.root
         queue = Queue()
         queue.enqueue(temp_node)
         if temp_node.value == value:
-            details = [0] * 3
+            return True
+        while True:
+            temp_node = queue.dequeue()
+            if temp_node == False:
+                break
+            for child in temp_node.children:
+                if child.value == value:
+                    return True
+                else:
+                    temp_node = child
+                    queue.enqueue(child)
+        return False
+
+#   O(V + E)
+    def dfs(self,value):
+        temp_node = self.root
+        stack = Stack()
+        stack.push(temp_node)
+        if temp_node.value == value:
+            return True
+        while True:
+            temp_node = stack.pop()
+            if temp_node == False:
+                break
+            for child in temp_node.children:
+                if child.value == value:
+                    return True
+                else:
+                    temp_node = child
+                    stack.push(child)
+        return False
+
+#   O(V + E)
+    def node_details(self,value):
+        temp_node = self.root
+        queue = Queue()
+        queue.enqueue(temp_node)
+        if temp_node.value == value:
+            details = [0] * 4
             details[2] = [0] * len(temp_node.children)
             for child in range(len(temp_node.children)):
                 details[2][child] = temp_node.children[child].value
+            details[3] = self.height()
             return details
         while True:
             temp_node = queue.dequeue()
@@ -713,7 +773,7 @@ class GenericTree:
             for child in temp_node.children:
                 if child.value == value:
                     temp_node = child
-                    details = [0] * 3
+                    details = [0] * 4
                     details[0] = temp_node.parent.value
                     details[1] = [0] * len(temp_node.parent.children)
                     for child in range(len(temp_node.parent.children)):
@@ -721,16 +781,28 @@ class GenericTree:
                     details[2] = [0] * len(temp_node.children)
                     for child in range(len(temp_node.children)):
                         details[2][child] = temp_node.children[child].value
+                    details[3] = self.height(temp_node)
                     return details
                 else:
                     temp_node = child
                     queue.enqueue(child)
         return False
 
-#   O(V + E)
-    def dfs(self,value):
-        pass
+#   O(n)
+    def height(self, root = None):
+        if root == None:
+            root = self.root
+        if root.children == []:
+            return -1
+        heights = [0] * (len(root.children) + 1)
+        for child in range(len(root.children)):
+            heights[child] = self.height(root.children[child])
+        return max(heights) + 1
 
+#   O(n)
+    def depth(self, root = None):
+        pass
+        
 #   O(V + E)
     def display(self):
         if self.root == None:

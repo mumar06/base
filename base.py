@@ -311,11 +311,11 @@ class Stack:
             temp_node = self.head 
             self.head = None
             self.tail = None
-            return temp_node
+            return temp_node.value
         else:
             temp_node = self.head
             self.head = self.head.next
-            return temp_node
+            return temp_node.value
 #   O(n)
 #   For Updating a Node in the Stack, return True if value is updated or False if value not found
     def update(self, old_value, new_value):
@@ -487,11 +487,11 @@ class Queue:
             temp_node = self.head
             self.head = None
             self.tail = None
-            return temp_node
+            return temp_node.value
         else:
             temp_node = self.head
             self.head = self.head.next
-            return temp_node
+            return temp_node.value
 #   O(n)
 #   For Updating a Node in the Queue, return True if value is updated or False if value not found
     def update(self, old_value, new_value):

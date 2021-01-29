@@ -679,18 +679,18 @@ class GenericTree:
 #   O(V + E)
     def search_parent(self,parent):
         temp_node = self.root
-        queue = []
-        queue.append(temp_node)
+        queue = Queue()
+        queue.enqueue(temp_node)
         if temp_node.value == parent:
             return temp_node
         while queue:
-            temp_node = queue.pop()
+            temp_node = queue.dequeue()
             for child in temp_node.children:
                 if child.value == parent:
                     return child
                 else:
                     temp_node = child
-                    queue.append(child)
+                    queue.enqueue(child)
         return False
 
 #   O(V + E)
@@ -700,16 +700,18 @@ class GenericTree:
         else:
             temp_node = self.root
             end = ' '
-            queue = []
-            queue.append(temp_node)
+            queue = Queue()
+            queue.enqueue(temp_node)
             print(f"Root -> {temp_node.value}")
-            while queue:
-                temp_node = queue.pop()
+            while True:
+                temp_node = queue.dequeue()
+                if temp_node == False:
+                    break
                 if temp_node.children != []:
                     print(f"Parent -> {temp_node.value}\t Children -> ",end=end)
                 for child in temp_node.children:
                     print(f"{child.value}\t",end=end)
-                    queue.append(child)
+                    queue.enqueue(child)
                 if temp_node.children != []:
                     print()
 

@@ -800,9 +800,29 @@ class GenericTree:
         return max(heights) + 1
 
 #   O(n)
-    def depth(self, root = None):
-        pass
-        
+    def depth(self, value, root = None, level = 0):
+        if root == None:
+            root = self.root
+        if root.value == value:
+            return level
+        if root.children == []:
+            return 0
+        for child in range(len(root.children)):
+            temp_level = self.depth(value,root.children[child],level + 1)
+            if temp_level == 0:
+                return level
+        return level
+
+#   O(n)
+    def nodesCount(self, count = 0, node = None):
+        if node == None:
+            node = self.root
+        self.count = count
+        self.count += 1
+        for child in range(len(node.children)):
+            self.nodeCount(self.count,node.children[child])
+        return self.count
+
 #   O(V + E)
     def display(self):
         if self.root == None:
